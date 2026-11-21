@@ -10,7 +10,7 @@
 	"contact": {
 		"homepage": "https://www.curseforge.com/minecraft/mc-mods/scroll-of-creative-mode-timed-sandboxed-admin",
 		"sources": "https://github.com/Ender3D/minecraft-mod-creative-scroll.git",
-		"issues": "https://github.com/issues"
+		"issues": "https://github.com/Ender3D/minecraft-mod-creative-scroll/issues"
 	},
 	"license": "MIT",
 	"icon": "assets/creativescroll/icon.png",
