@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"id": "creativescroll",
+	"version": "${version}",
+	"name": "creativescroll",
+	"description": "An admin-exclusive, configurable scroll that grants players timed, anti-cheat sandboxed Creative Mode sessions with automatic inventory restoration and safe-landing protection.",
+	"authors": [
+		"Ender3D"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/creativescroll/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.ndrsbox.creativescroll.Creativescroll"
+		],
+		"client": [
+			"com.ndrsbox.creativescroll.client.CreativescrollClient"
+		]
+	},
+	"mixins": [
+		"creativescroll.mixins.json",
+		{
+			"config": "creativescroll.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.20.1",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
