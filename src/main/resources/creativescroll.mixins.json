@@ -1,0 +1,15 @@
+{
+	"required": true,
+	"package": "com.ndrsbox.creativescroll.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"InventoryMixin",
+		"ServerGamePacketListenerImplMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}
