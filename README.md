@@ -52,8 +52,10 @@ Hold the scroll and Right-Click at any time to consume the item and begin your t
 Admin Commands:
 
 **Operators (Gamemaster / OP Level 2+) can manage configurations and active sessions live in-game:**\
-**/CreativeScroll reload** — Reloads config/creativescroll.json immediately without restarting the server.\
-**/CreativeScroll expire** <player> — Immediately terminates a target player's active scroll session, restores their Survival inventory, reverts their gamemode, and applies Slow Falling.
+- **/creativeccroll reload** — Reloads config/creativescroll.json immediately without restarting the server.
+- **/creativescroll expire** <player> — Immediately terminates a target player's active scroll session, restores their Survival inventory, reverts their gamemode, and applies Slow Falling.
+- **/creativescroll status** — Show a list of all playes with a currently active scroll with current time remaining.
+- **/creativescroll status <player>** — If that player has an active scroll, shows message with active time remaining.
 
 ## Configuration Profile Tuning:
 
