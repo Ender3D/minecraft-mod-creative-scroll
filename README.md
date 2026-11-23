@@ -36,7 +36,7 @@ Once the countdown reaches zero (or an admin forces expiration), the player's Cr
 
 ## Installation
 
-Ensure your server and client environments are running the Fabric Loader for Minecraft 26.3 alongside Fabric API.
+Ensure your server and client environments are running the Fabric Loader for Minecraft 1.21.11 alongside Fabric API.
 Drop the creativescroll-*.jar file into both your server and client mods/ directories.
 Launch the game once to auto-generate your custom server parameters profile.
 
@@ -52,8 +52,10 @@ Hold the scroll and Right-Click at any time to consume the item and begin your t
 Admin Commands:
 
 **Operators (Gamemaster / OP Level 2+) can manage configurations and active sessions live in-game:**\
-**/CreativeScroll reload** — Reloads config/creativescroll.json immediately without restarting the server.\
-**/CreativeScroll expire** <player> — Immediately terminates a target player's active scroll session, restores their Survival inventory, reverts their gamemode, and applies Slow Falling.
+- **/creativeccroll reload** — Reloads config/creativescroll.json immediately without restarting the server.
+- **/creativescroll expire** <player> — Immediately terminates a target player's active scroll session, restores their Survival inventory, reverts their gamemode, and applies Slow Falling.
+- **/creativescroll status** — Show a list of all playes with a currently active scroll with current time remaining.
+- **/creativescroll status <player>** — If that player has an active scroll, shows message with active time remaining.
 
 ## Configuration Profile Tuning:
 
