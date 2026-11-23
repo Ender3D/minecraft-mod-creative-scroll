@@ -3,8 +3,8 @@
 	"package": "com.ndrsbox.creativescroll.mixin",
 	"compatibilityLevel": "JAVA_25",
 	"mixins": [
-		"ExampleMixin",
-		"ServerGamePacketListenerImplMixin"
+		"ServerGamePacketListenerImplMixin",
+		"InventoryMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

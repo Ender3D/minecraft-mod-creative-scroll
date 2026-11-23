@@ -2,6 +2,7 @@ package com.ndrsbox.creativescroll.item;
 
 import com.ndrsbox.creativescroll.Creativescroll;
 import com.ndrsbox.creativescroll.state.ScrollSessionManager;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
@@ -16,7 +17,9 @@ import net.minecraft.world.level.Level;
 
 public class CreativeScrollItem extends Item {
     public CreativeScrollItem(Properties properties) {
-        super(properties.stacksTo(1));
+        super(properties
+                .stacksTo(1)
+                .component(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true));
     }
 
     @Override
@@ -24,12 +27,12 @@ public class CreativeScrollItem extends Item {
         ItemStack stack = player.getItemInHand(hand);
 
         if (!level.isClientSide() && player instanceof ServerPlayer serverPlayer) {
-            if (serverPlayer.gameMode.getGameModeForPlayer() == GameType.CREATIVE) {
-                serverPlayer.sendSystemMessage(Component.literal("§cYou are already in Creative Mode!"));
+            if (ScrollSessionManager.hasActiveScroll(serverPlayer)
+                    || serverPlayer.gameMode.getGameModeForPlayer() == GameType.CREATIVE) {
+                serverPlayer.sendSystemMessage(Component.literal("§cYou already have Creative Mode active!"));
                 return InteractionResult.FAIL;
             }
 
-            // Consume 1 scroll
             if (!serverPlayer.getAbilities().instabuild) {
                 stack.shrink(1);
             }
@@ -42,9 +45,5 @@ public class CreativeScrollItem extends Item {
         }
 
         return InteractionResult.SUCCESS;
-    }
-
-    public boolean isFoil(ItemStack stack) {
-        return true;
     }
 }
